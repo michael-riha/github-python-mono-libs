@@ -8,5 +8,5 @@ version = "0.1.0"
 description = "Library 1 with some_function"
 dependencies = []
 
-[tool.setuptools.packages.find]
-where = ["src"]
+# [tool.setuptools.packages.find]
+# where = ["src"]
