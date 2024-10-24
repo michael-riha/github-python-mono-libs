@@ -1,0 +1,13 @@
+services:
+  app:
+    build: .
+    command: tail -f /dev/null
+    # command: ["python", "app.py"]
+    ports:
+      - "5678:5678"  # Exposing the debugpy port
+    volumes:
+      - ./app:/usr/src/app  # Mount the current directory to the container
+      - ./requirements.txt:/usr/src/app/requirements.txt
+    environment:
+      - PYTHONUNBUFFERED=1  # Ensure Python output is shown in real time
+    
