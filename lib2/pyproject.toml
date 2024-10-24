@@ -5,5 +5,5 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "lib2"
 version = "0.1.0"
-description = "Library 1"
+description = "Library 2 with some_function"
 dependencies = []
