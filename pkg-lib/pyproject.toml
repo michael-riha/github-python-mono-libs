@@ -3,7 +3,10 @@ requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "lib2"
+name = "pkg-lib"
 version = "0.1.0"
 description = "Library 2 with some_function"
 dependencies = []
+
+[tool.setuptools.packages.find]
+where = ["src"]

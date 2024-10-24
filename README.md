@@ -33,10 +33,29 @@ More here:
 - 🔑 How to create a Token in `github` 
   - https://github.com/ByteInternet/pip-install-privates?tab=readme-ov-file#github
 
+# Structure
+
+https://setuptools.pypa.io/en/latest/userguide/package_discovery.html
+
 ## Debug
 
 - `pip list`
 - `pip show lib1`
 - `python -c "import sys; print(sys.path)"`
 - Find the path of `site-packages` -> `python -m site`
+  - `/usr/local/lib/python3.10/site-packages`
   - `whereis python` -> `/usr/local/bin/python`
+
+  ### Debug and observe depedancies
+
+1) `cd /usr/src/app` WORKDIR of the Container
+2) `pip install --no-cache-dir -r requirements.txt`
+  1) check the installation `pip list` & `pip show lib1`
+3) check the file strcutre of the package `cd /usr/local/lib/python3.10/site-packages`
+4) test the import
+```
+python
+>> import lib1
+>> lib1.some_function()
+```
+5) OPTIONAL: uninstall if needed `pip uninstall lib1 lib2`

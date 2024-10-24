@@ -7,14 +7,12 @@ WORKDIR /usr/src/app
 # Install git and other dependencies
 RUN apt-get update && apt-get install -y git
 
-# Copy the requirements.txt file to the container
-COPY requirements.txt ./
-
-# # Install any needed packages specified in requirements.txt
-RUN pip install --no-cache-dir -r requirements.txt
-
 # Copy the current directory contents into the container at /usr/src/app
 COPY . .
+
+# # Install any needed packages specified in requirements.txt
+RUN pip install --no-cache-dir -r requirements/requirements.txt
+
 
 # Expose the debugpy port
 EXPOSE 5678
