@@ -3,4 +3,4 @@
 -e /opt/libs/pkg_lib2/
 
 -e /opt/libs/mynamespace-subpackage-a/
--e /opt/libs/mynamespace-subpackage-b/
+-e /opt/libs/mns-subpackage-b/
