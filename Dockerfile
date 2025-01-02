@@ -7,10 +7,15 @@ WORKDIR /usr/src/app
 # Install git and other dependencies
 RUN apt-get update && apt-get install -y git
 
-# Copy the current directory contents into the container at /usr/src/app
-COPY . .
+# Install dependencies
+RUN --mount=type=cache,target=/root/.cache \
+    --mount=type=bind,source=/app/requirements/requirements.txt,target=requirements.txt \
+    pip install -r requirements.txt
 
-# # Install any needed packages specified in requirements.txt
+# Copy the current directory contents into the container at /usr/src/app
+COPY ./app .
+
+# OLD WAY # Install any needed packages specified in requirements.txt
 # RUN pip install --no-cache-dir -r requirements/requirements.txt
 
 

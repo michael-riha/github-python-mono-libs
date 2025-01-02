@@ -2,17 +2,18 @@ services:
   app:
     build: .
      # FOR SHARED LIB DEV 👇 - TODO pip does not exit with exit-code 0 so `&&` (use the ; operator) does not work, no clue why it does not return properly, yet
-    # command: ["bash", "-c" , 'pip install -r /opt/shared-libraries.txt ; echo "pip install exited with code: $?" ; python -m debugpy --listen 0.0.0.0:5678 app.py']
-    command: tail -f /dev/null
+    command: ["bash", "-c" , 'pip install -r /opt/shared-libraries.txt ; echo "pip install exited with code: $?" ; python app.py']
+    # command: tail -f /dev/null
     # command: ["python", "app.py"]
     ports:
       - "5678:5678"  # Exposing the debugpy port
     volumes:
       - ./app:/usr/src/app  # Mount the current directory to the container
-      - ./app/requirements/requirements.txt:/usr/src/app/requirements.txt
+      - ./app/requirements/requirements.txt:/usr/src/app/requirements/requirements.txt
       # FOR SHARED LIB DEV 👇 next two lines are just needed for `shared-library`-development! Please clone https://github.com/bonrepublic/shared-libraries/ first.
       - ./app/requirements/shared-libraries.txt:/opt/shared-libraries.txt
-      # - ./libs/:/opt/libs
+      - ./libs/:/opt/libs
     environment:
       - PYTHONUNBUFFERED=1  # Ensure Python output is shown in real time
+      - PYTHONDONTWRITEBYTECODE=1
     
