@@ -1,8 +1,8 @@
 # Install lib1 from the my-multi-lib-repo repository
-git+https://github.com/michael-riha/github-python-mono-libs.git@main#egg=lib1&subdirectory=lib1
+git+https://github.com/michael-riha/github-python-mono-libs.git@main#egg=lib1&subdirectory=libs/lib1
 
 # Install lib2 from the my-multi-lib-repo repository
-git+https://github.com/michael-riha/github-python-mono-libs.git@main#egg=pkg-lib&subdirectory=pkg-lib
+git+https://github.com/michael-riha/github-python-mono-libs.git@main#egg=pkg_lib2&subdirectory=libs/pkg_lib2
 
 # Include debugpy for remote debugging
 debugpy==1.6.6

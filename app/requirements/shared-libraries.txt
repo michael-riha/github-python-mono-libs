@@ -1,0 +1,2 @@
+# Adding new dependencies, entry-points or changing your project’s metadata require a fresh “editable” re-installation. - https://setuptools.pypa.io/en/latest/userguide/development_mode.html#limitations
+-e /opt/libs/example_library/
