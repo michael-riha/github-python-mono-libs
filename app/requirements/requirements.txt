@@ -4,5 +4,8 @@ git+https://github.com/michael-riha/github-python-mono-libs.git@main#egg=lib1&su
 # Install lib2 from the my-multi-lib-repo repository
 git+https://github.com/michael-riha/github-python-mono-libs.git@main#egg=pkg_lib2&subdirectory=libs/pkg_lib2
 
+# Install a native namespace packages (mynamespace) from the my-multi-lib-repo repository
+git+https://github.com/michael-riha/github-python-mono-libs.git@main#egg=mynamespace.subpackage_a&subdirectory=libs/mynamespace-subpackage-a
+
 # Include debugpy for remote debugging
 debugpy==1.6.6

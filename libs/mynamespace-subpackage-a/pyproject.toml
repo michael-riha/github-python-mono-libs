@@ -1,0 +1,14 @@
+[build-system]
+requires = ["setuptools", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "mynamespace-subpackage-a"
+version = "0.1.0"
+description = "Namespace Package"
+dependencies = []
+
+
+[tool.setuptools.packages.find]
+where = ["src/"]
+include = ["mynamespace.subpackage_a"]

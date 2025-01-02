@@ -22,6 +22,13 @@ def main():
     # Call the function using dot notation
     pkg_lib2.pkg1.some_function()
 
+    import mynamespace.subpackage_a as sub_a
+    print(sub_a.name)
+
+    import mynamespace.subpackage_b as sub_b
+    print(sub_b.name)
+
+
 """
 Removes all modules with the given name prefix from the Python module cache.
 
