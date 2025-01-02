@@ -56,9 +56,9 @@ def remove_modules(module_name: str):
     # importlib.reload(module_name)
 
 if __name__ == "__main__":
-    import debugpy
-    debugpy.listen(("0.0.0.0", 5678))  # Set up remote debugger on port 5678
-    print("Waiting for debugger to attach...")
-    debugpy.wait_for_client()  # Pause execution until debugger is attached
-    print("Debugger attached!")
+    # import debugpy
+    # debugpy.listen(("0.0.0.0", 5678))  # Set up remote debugger on port 5678
+    # print("Waiting for debugger to attach...")
+    # debugpy.wait_for_client()  # Pause execution until debugger is attached
+    # print("Debugger attached!")
     main()

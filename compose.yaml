@@ -2,11 +2,14 @@ services:
   app:
     build: .
      # FOR SHARED LIB DEV 👇 - TODO pip does not exit with exit-code 0 so `&&` (use the ; operator) does not work, no clue why it does not return properly, yet
-    command: ["bash", "-c" , 'pip install -r /opt/shared-libraries.txt ; echo "pip install exited with code: $?" ; python app.py']
-    # command: tail -f /dev/null
+    # command: ["bash", "-c" , 'pip install -r /opt/shared-libraries.txt ; echo "pip install exited with code: $?" ; python -m debugpy --listen 0.0.0.0:5678 --wait-for-client app.py']
+    # command: ["python", "-m", "debugpy", "--listen", "0.0.0.0:5678" "manage.py", "runserver", "0.0.0.0:8000"]
+    command: tail -f /dev/null
     # command: ["python", "app.py"]
+    # command: pytest libs/*/tests
     ports:
       - "5678:5678"  # Exposing the debugpy port
+      - "5679:5679"  # Exposing a seconf debugpy port for tests
     volumes:
       - ./app:/usr/src/app  # Mount the current directory to the container
       - ./app/requirements/requirements.txt:/usr/src/app/requirements/requirements.txt
@@ -16,4 +19,3 @@ services:
     environment:
       - PYTHONUNBUFFERED=1  # Ensure Python output is shown in real time
       - PYTHONDONTWRITEBYTECODE=1
-    

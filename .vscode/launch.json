@@ -19,6 +19,25 @@
                 "remoteRoot": "/opt/libs"
             }
           ]
-      }
+      },
+      {
+        "name": "Python: Remote Attach Tests (5679)",
+        "type": "python",
+        "request": "attach",
+        "connect": {
+            "host": "localhost",
+            "port": 5679
+        },
+        "pathMappings": [
+          {
+              "localRoot": "${workspaceFolder}/app",
+              "remoteRoot": "/usr/src/app"
+          },
+          {
+              "localRoot": "${workspaceFolder}/libs",
+              "remoteRoot": "/opt/libs"
+          }
+        ]
+    }
   ]
 }
