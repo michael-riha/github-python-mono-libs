@@ -6,7 +6,9 @@ build-backend = "setuptools.build_meta"
 name = "mynamespace-subpackage-b"
 version = "0.1.0"
 description = "Namespace Package"
-dependencies = []
+dependencies = [
+    "lib-internal-ref @ git+https://${GITHUB_TOKEN}@github.com/username/private-repo.git@main#egg=lib-internal-ref",
+]
 
 
 [tool.setuptools.packages.find]

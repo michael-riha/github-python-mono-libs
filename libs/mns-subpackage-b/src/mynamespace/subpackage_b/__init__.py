@@ -15,3 +15,7 @@
 # limitations under the License.
 
 name = 'b'
+
+from lib_internal_ref import some_function
+some_function()
+# This line is intentionally left blank to maintain the existing structure of the file.
