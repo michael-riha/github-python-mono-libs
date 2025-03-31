@@ -10,6 +10,7 @@ RUN apt-get update && apt-get install -y git
 # Install dependencies
 RUN --mount=type=cache,target=/root/.cache \
     --mount=type=bind,source=/app/requirements/requirements.txt,target=requirements.txt \
+    # --mount=type=bind,source=/app/requirements/shared-libraries.txt,target=shared-libraries.txt \
     pip install -r requirements.txt
 
 # Copy the current directory contents into the container at /usr/src/app

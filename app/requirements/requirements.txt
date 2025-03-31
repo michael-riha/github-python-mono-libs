@@ -11,3 +11,6 @@ git+https://github.com/michael-riha/github-python-mono-libs.git@main#egg=mynames
 # Include debugpy for remote debugging
 debugpy==1.6.6
 pytest==8.3.4
+
+# Make all packages local available
+# -r shared-libraries.txt
