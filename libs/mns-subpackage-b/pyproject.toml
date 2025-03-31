@@ -7,7 +7,7 @@ name = "mynamespace-subpackage-b"
 version = "0.1.0"
 description = "Namespace Package"
 dependencies = [
-    "lib-internal-ref @ git+https://github.com/username/private-repo.git@main#egg=lib-internal-ref",
+    "lib-internal-ref @ git+https://github.com/michael-riha/github-python-mono-libs.git@main#egg=lib1&subdirectory=libs/lib-internal-ref",
 ]
 
 
