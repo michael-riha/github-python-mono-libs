@@ -3,7 +3,7 @@ requires = ["setuptools", "wheel"]
 build-backend = "setuptools.build_meta"
 
 [project]
-name = "lib-internal-ref"
+name = "lib_internal_ref"
 version = "0.1.0"
 description = "Library to be referenced internall over `pyproject.toml` including some_function"
 dependencies = []
