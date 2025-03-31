@@ -45,7 +45,7 @@ https://setuptools.pypa.io/en/latest/userguide/package_discovery.html
 - Find the path of `site-packages` -> `python -m site`
   - `/usr/local/lib/python3.10/site-packages`
   - `whereis python` -> `/usr/local/bin/python`
-
+- `pip install --upgrade --force-reinstall -r requirements.txt`
   ### Debug and observe depedancies
 
 1) `cd /usr/src/app` WORKDIR of the Container
